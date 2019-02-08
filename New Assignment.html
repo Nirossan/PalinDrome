@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function isItAPalinDrome(word) {
+      console.log("word to check is ", word);
+      var answer = true; // assume true
+      var wordAsArray = word.split("");
+      //split divide words into individual charactors 
+
+      for (var i = 0; i < word.length; i++) {
+        // use noon as an example
+        // the first letter must be the same as the last
+        // the second letter must be the same as the second last
+        // if you reach a 'halfway point' and all the letters match
+        // you have a palindrome.
+        if (wordAsArray[i] !== wordAsArray[word.length - 1 - i]) {
+          answer = false;
+        }
+      }
+
+      return answer;
+    }
+  </script>
+</head>
+<body>
+<form>
+  <input type="text" id="word" value=""><br>
+</form>
+<button id="check">Check Word</button>
+<script>
+  check.onclick = function (event) {
+    // get word
+    var wd = document.getElementById("word").value;
+    console.log(wd);
+    var result = isItAPalinDrome(wd);
+    console.log('is the word a palindrome? answer is ', result);
+  };
+</script>
+</body>
+</html>
